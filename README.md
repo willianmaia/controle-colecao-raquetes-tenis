@@ -1,7 +1,14 @@
 # controle-colecao-raquetes-tenis
 Projeto para Controle de uma Coleção de Raquetes de Tenis
 
-📖 Tópicos/Checklist
+Endereço de Deploy - GitHub Pages
+https://github.com/willianmaia/
+
+Protótipo
+em breve!
+
+
+Checklist
 
 - Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
