@@ -5,12 +5,12 @@ Projeto para Controle de uma Coleção de Raquetes de Tenis
 https://github.com/willianmaia/
 
 ## Protótipo
-em breve!
+https://www.figma.com/file/4mUilCna6Mlhb7Ck0yFtAH/Untitled?type=design&node-id=0%3A1&mode=design&t=Db6zbeeezt0AvSKs-1
 
 
 ## Checklist
 
-- [ ] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
+- [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
 - [ ] Usar componentes de algum framework CSS (Bootstrap, Materialize ou outro).
 - [ ] Apresentar as telas com layout responsivo usando ou não algum framework CSS.
 - [ ] Construir páginas web com o conceito de componentes. 
