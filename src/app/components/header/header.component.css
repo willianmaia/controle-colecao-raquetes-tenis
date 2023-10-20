@@ -1,10 +1,10 @@
-.nav-container {
+.hader-container {
     background-color: blue accent-1;
      /*text-align: center;*/
   }
   
   .my-logo {
-    height: 60px;
+    height: 120px;
   }
   
   .my-text {
@@ -18,6 +18,7 @@
     display: flex;
     justify-content: center; /* Centralizar horizontalmente */
     align-items: center; /* Centralizar verticalmente */
+    text-align: center;
   }
   
   .text-container {

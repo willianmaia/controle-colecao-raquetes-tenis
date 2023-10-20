@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent {
+  imgRaquete: string = 'assets/resources/images/raquete-de-tenis.png';
 
 }

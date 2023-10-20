@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponentComponent {
+  email: string = 'willianmaia@alunos.utfpr.edu.br';
 
 }
