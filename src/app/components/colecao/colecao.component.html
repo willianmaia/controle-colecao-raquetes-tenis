@@ -1,3 +1,10 @@
 <div class="colecao-container">
-    <div class="colecao-div">COLEÇÃO</div>
-  </div>
+  <div class="colecao-div">COLEÇÃO</div>
+  <ul>
+    <li *ngFor="let raquete of raquetes">
+      <p>Nome/Marca: {{ raquete.nomeMarca }}</p>
+      <p>Valor: {{ raquete.valor }}</p>
+      <!-- Outros campos da raquete -->
+    </li>
+  </ul>
+</div>

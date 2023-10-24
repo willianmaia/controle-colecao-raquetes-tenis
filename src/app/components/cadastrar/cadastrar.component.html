@@ -1,3 +1,27 @@
 <div class="cadastrar-container">
-    <div class="cadastrar-div">CADASTRAR</div>
-  </div>
+  <div class="cadastrar-div">CADASTRAR</div>
+
+  <form class="cadastrarform-div">
+    <label for="nome-marca">Nome/Marca:</label>
+    <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input" required maxlength="300">
+
+    <label for="valor">Valor:</label>
+    <input type="text" id="valor" name="valor" class="cadastrar-input" required maxlength="300">
+
+    <label for="link">Link:</label>
+    <input type="text" id="link" name="link" class="cadastrar-input" required maxlength="300">
+
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" name="descricao" class="cadastrar-input" required maxlength="300">
+
+    <label for="imagem">Inserir Imagem:</label>
+    <input type="file" id="imagem" name="imagem" accept="image/*" (change)="onFileSelected($event)" class="cadastrarimagem-input">
+
+    <button (click)="cadastrarRaquete()" class="cadastrar-button">Cadastrar Raquete</button>
+  </form>
+</div>
+
+<app-colecao [raquetes]="raquetes"></app-colecao>
+
+
+

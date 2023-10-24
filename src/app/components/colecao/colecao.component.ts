@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Raquete } from '../../raquete.model';
 
 @Component({
   selector: 'app-colecao',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./colecao.component.css']
 })
 export class ColecaoComponent {
+  @Input() raquetes: Raquete[] = [];
 
+  onRaqueteCadastrada(raquete: Raquete) {
+    this.raquetes.push(raquete);
+
+   
+    console.log('Método onRaqueteCadastrada foi chamado com a seguinte raquete:', raquete);
+  }
 }
