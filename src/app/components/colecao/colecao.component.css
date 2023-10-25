@@ -20,4 +20,23 @@
     height: 10%;
     cursor: default;
   }
+
+  .colecao-items {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .colecao-item {
+    width: 50%; /* Para criar 2 colunas */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .colecao-item img {
+    max-width: 100px; /* Ajuste o tamanho da imagem conforme necessário */
+    display: block;
+    margin: 0 auto;
+  }
+  
   

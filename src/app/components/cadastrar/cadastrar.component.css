@@ -41,6 +41,10 @@ input, textarea {
   text-align: center; /* Centraliza o botão horizontalmente */
 }
 
-.cadastrarimagem-input{
-  text-align: center;
+.cadastrarimagem-input {
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+  flex-direction: column; /* Alinha elementos verticalmente */
+  text-align: center; /* Centraliza o texto dentro do botão */
 }

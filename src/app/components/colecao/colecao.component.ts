@@ -1,18 +1,19 @@
-import { Component, Input } from '@angular/core';
-import { Raquete } from '../../raquete.model';
+import { Component, OnInit } from '@angular/core';
+import { RaqueteService } from '../../raquete.service';
+
 
 @Component({
   selector: 'app-colecao',
   templateUrl: './colecao.component.html',
   styleUrls: ['./colecao.component.css']
 })
-export class ColecaoComponent {
-  @Input() raquetes: Raquete[] = [];
+export class ColecaoComponent implements OnInit {
+  raquetes: any[] = [];
 
-  onRaqueteCadastrada(raquete: Raquete) {
-    this.raquetes.push(raquete);
+  constructor(private raqueteService: RaqueteService) {}
 
-   
-    console.log('Método onRaqueteCadastrada foi chamado com a seguinte raquete:', raquete);
+  ngOnInit() {
+    this.raquetes = this.raqueteService.obterRaquetes();
+    console.log('Raquetes obtidas do serviço:', this.raquetes);
   }
 }

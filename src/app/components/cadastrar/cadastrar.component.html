@@ -1,27 +1,29 @@
 <div class="cadastrar-container">
   <div class="cadastrar-div">CADASTRAR</div>
-
+  
   <form class="cadastrarform-div">
-    <label for="nome-marca">Nome/Marca:</label>
-    <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input" required maxlength="300">
+    <div class="form-row">
+      <label for="nome-marca" style="font-size: initial;">Nome/Marca:</label>
+      <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.nomeMarca" style="font-size: initial;">
+    </div>
 
-    <label for="valor">Valor:</label>
-    <input type="text" id="valor" name="valor" class="cadastrar-input" required maxlength="300">
+    <div class="form-row">
+      <label for="valor" style="font-size: initial;">Valor:</label>
+      <input type="text" id="valor" name="valor" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.valor" style="font-size: initial;">
+    </div>
 
-    <label for="link">Link:</label>
-    <input type="text" id="link" name="link" class="cadastrar-input" required maxlength="300">
+    <div class="form-row">
+      <label for="link" style="font-size: initial;">Link:</label>
+      <input type="text" id="link" name="link" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.link" style="font-size: initial;">
+    </div>
 
-    <label for="descricao">Descrição:</label>
-    <input type="text" id="descricao" name="descricao" class="cadastrar-input" required maxlength="300">
+    <div class="form-row">
+      <label for="descricao" style="font-size: initial;">Descrição:</label>
+      <input type="text" id="descricao" name="descricao" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.descricao" style="font-size: initial;">
+    </div>
 
-    <label for="imagem">Inserir Imagem:</label>
-    <input type="file" id="imagem" name="imagem" accept="image/*" (change)="onFileSelected($event)" class="cadastrarimagem-input">
-
-    <button (click)="cadastrarRaquete()" class="cadastrar-button">Cadastrar Raquete</button>
+    <div class="form-row">
+      <button (click)="cadastrarRaquete()" class="cadastrar-button" style="font-size: initial;">Cadastrar Raquete</button>
+    </div>
   </form>
 </div>
-
-<app-colecao [raquetes]="raquetes"></app-colecao>
-
-
-

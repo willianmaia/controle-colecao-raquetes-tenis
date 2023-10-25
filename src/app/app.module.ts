@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { RaqueteService } from './raquete.service';
 
 import { AppComponent } from './app.component';
 import { FooterComponentComponent } from './components/footer/footer.component';
@@ -24,13 +26,14 @@ import { DetalhesComponent } from './components/detalhes/detalhes.component';
     ColecaoComponent,
     PesquisarComponent,
     CadastrarComponent,
-    DetalhesComponent
+    DetalhesComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [RaqueteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

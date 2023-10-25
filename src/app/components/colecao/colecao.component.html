@@ -1,10 +1,14 @@
 <div class="colecao-container">
   <div class="colecao-div">COLEÇÃO</div>
-  <ul>
-    <li *ngFor="let raquete of raquetes">
-      <p>Nome/Marca: {{ raquete.nomeMarca }}</p>
-      <p>Valor: {{ raquete.valor }}</p>
-      <!-- Outros campos da raquete -->
-    </li>
-  </ul>
+</div>
+
+<div class="colecao-items">
+  <div class="colecao-item" *ngFor="let raquete of raquetes">
+    <img src="assets/resources/images/raquete-de-tenis.png" alt="Imagem Padrão da Raquete">
+    <p>{{ raquete.nomeMarca }}</p>
+  </div>
+</div>
+
+<div *ngIf="raquetes.length === 0">
+  <p>Nenhum item disponível.</p>
 </div>
