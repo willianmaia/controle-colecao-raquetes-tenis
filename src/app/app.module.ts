@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { RaqueteService } from './raquete.service';
 
 import { AppComponent } from './app.component';
-import { FooterComponentComponent } from './components/footer/footer.component';
+import { FooterComponent} from './components/footer/footer.component';
 import { NavbarComponentComponent } from './components/navbar/navbar.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MenuComponent } from './components/menu/menu.component';
@@ -15,10 +15,11 @@ import { PesquisarComponent } from './components/pesquisar/pesquisar.component';
 import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponentComponent,
+    FooterComponent,
     NavbarComponentComponent,
     HeaderComponent,
     MenuComponent,

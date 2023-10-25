@@ -1,4 +1,5 @@
 export class Raquete {
+    id: string;
     nomeMarca: string;
     valor: string;
     link: string;
@@ -6,6 +7,7 @@ export class Raquete {
     imagem: string;
   
     constructor() {
+      this.id = '';
       this.nomeMarca = '';
       this.valor = '';
       this.link = '';

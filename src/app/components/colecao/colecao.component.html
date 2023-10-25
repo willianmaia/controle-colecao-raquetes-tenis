@@ -4,7 +4,9 @@
 
 <div class="colecao-items">
   <div class="colecao-item" *ngFor="let raquete of raquetes">
-    <img src="assets/resources/images/raquete-de-tenis.png" alt="Imagem Padrão da Raquete">
+    <a [routerLink]="['/detalhes', raquete.id]">
+      <img src="assets/resources/images/raquete-de-tenis.png" alt="Imagem Padrão da Raquete">
+    </a>
     <p>{{ raquete.nomeMarca }}</p>
   </div>
 </div>

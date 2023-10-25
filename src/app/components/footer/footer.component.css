@@ -3,7 +3,10 @@
     color: black; 
     line-height: 1; 
     text-align: center;
-    position: fixed;
+    /*position: fixed;*/
     bottom: 0;
     width: 100%;
+    left: 0;
+    right: 0;
+    z-index: 1;
   }

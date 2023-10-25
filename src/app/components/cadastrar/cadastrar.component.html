@@ -1,5 +1,7 @@
 <div class="cadastrar-container">
-  <div class="cadastrar-div">CADASTRAR</div>
+  <div class="cadastrar-div">
+    {{ modoEdicao ? 'EDITAR' : 'CADASTRAR' }}
+  </div>
   
   <form class="cadastrarform-div">
     <div class="form-row">
@@ -23,7 +25,7 @@
     </div>
 
     <div class="form-row">
-      <button (click)="cadastrarRaquete()" class="cadastrar-button" style="font-size: initial;">Cadastrar Raquete</button>
+      <button (click)="executarAcao()" class="cadastrar-button" style="font-size: initial;">{{ modoEdicao ? 'Salvar' : 'Cadastrar' }} Raquete</button>
     </div>
   </form>
 </div>
