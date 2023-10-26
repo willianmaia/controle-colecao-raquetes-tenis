@@ -1,0 +1,11 @@
+.quantidade-raquetes {
+    color: black; 
+    font-weight: bold; /* Texto em negrito */
+    text-align: center; /* Centralizar o texto horizontalmente */
+    display: flex;
+    justify-content: center; /* Centralizar o conteúdo horizontalmente */
+    align-items: center; /* Centralizar o conteúdo verticalmente */
+    display: flex;
+    margin: 10px;
+    font-size: 20px;
+  }

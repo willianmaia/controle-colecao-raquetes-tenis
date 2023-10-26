@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RaqueteService } from './raquete.service';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { FooterComponent} from './components/footer/footer.component';
@@ -14,6 +15,7 @@ import { ColecaoComponent } from './components/colecao/colecao.component';
 import { PesquisarComponent } from './components/pesquisar/pesquisar.component';
 import { CadastrarComponent } from './components/cadastrar/cadastrar.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
+import { ContagemRaquetesComponent } from './components/contagem-raquetes/contagem-raquetes.component';
 
 
 @NgModule({
@@ -28,11 +30,13 @@ import { DetalhesComponent } from './components/detalhes/detalhes.component';
     PesquisarComponent,
     CadastrarComponent,
     DetalhesComponent,
+    ContagemRaquetesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   providers: [RaqueteService],
   bootstrap: [AppComponent]
