@@ -11,6 +11,7 @@
       <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('required')"></div>
       <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('maxlength')">Nome/Marca muito longo.</div>
       <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('minlength')">Nome/Marca muito curto.</div>
+      <div *ngIf="raqueteForm.get('nomeMarca')?.hasError('pattern')">Nome/Marca deve conter apenas letras, números e espaços.</div>
     </div>
 
     <div class="form-row">
@@ -27,6 +28,7 @@
         formControlName="link" style="font-size: initial">
       <div *ngIf="raqueteForm.get('link')?.hasError('required')"></div>
       <div *ngIf="raqueteForm.get('link')?.hasError('maxlength')">Link muito longo.</div>
+      <div *ngIf="raqueteForm.get('link')?.hasError('pattern')">Link inválido. Use um formato válido.</div>
     </div>
     
     <div class="form-row">
@@ -35,6 +37,7 @@
         formControlName="descricao" style="font-size: initial;">
       <div *ngIf="raqueteForm?.get('descricao')?.hasError('required')"></div>
       <div *ngIf="raqueteForm?.get('descricao')?.hasError('maxlength')">Descrição muito longa.</div>
+      <div *ngIf="raqueteForm.get('descricao')?.hasError('pattern')">A descrição deve conter apenas letras, números e os caracteres @!#$%^&*()_+.,;?</div>
     </div>
 
     <div class="form-row">
