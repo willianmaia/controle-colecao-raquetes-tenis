@@ -3,29 +3,44 @@
     {{ modoEdicao ? 'EDITAR' : 'CADASTRAR' }}
   </div>
   
-  <form class="cadastrarform-div">
+  <form [formGroup]="raqueteForm" class="cadastrarform-div" (ngSubmit)="executarAcao()">
     <div class="form-row">
       <label for="nome-marca" style="font-size: initial;">Nome/Marca:</label>
-      <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.nomeMarca" style="font-size: initial;">
+      <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input"
+        formControlName="nomeMarca" style="font-size: initial;">
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('maxlength')">Nome/Marca muito longo.</div>
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('minlength')">Nome/Marca muito curto.</div>
     </div>
 
     <div class="form-row">
       <label for="valor" style="font-size: initial;">Valor:</label>
-      <input type="text" id="valor" name="valor" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.valor" style="font-size: initial;">
+      <input type="text" id="valor" name="valor" class="cadastrar-input"
+        formControlName="valor" style="font-size: initial">
+      <div *ngIf="raqueteForm.get('valor')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm.get('valor')?.hasError('pattern')">Formato de dinheiro inválido. Use um formato válido, como 12345,67</div>
     </div>
-
+    
     <div class="form-row">
       <label for="link" style="font-size: initial;">Link:</label>
-      <input type="text" id="link" name="link" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.link" style="font-size: initial;">
+      <input type="text" id="link" name="link" class="cadastrar-input"
+        formControlName="link" style="font-size: initial">
+      <div *ngIf="raqueteForm.get('link')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm.get('link')?.hasError('maxlength')">Link muito longo.</div>
     </div>
-
+    
     <div class="form-row">
       <label for="descricao" style="font-size: initial;">Descrição:</label>
-      <input type="text" id="descricao" name="descricao" class="cadastrar-input" required maxlength="300" [(ngModel)]="raquete.descricao" style="font-size: initial;">
+      <input type="text" id="descricao" name="descricao" class="cadastrar-input"
+        formControlName="descricao" style="font-size: initial;">
+      <div *ngIf="raqueteForm?.get('descricao')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm?.get('descricao')?.hasError('maxlength')">Descrição muito longa.</div>
     </div>
 
     <div class="form-row">
-      <button (click)="executarAcao()" class="cadastrar-button" style="font-size: initial;">{{ modoEdicao ? 'Salvar' : 'Cadastrar' }} Raquete</button>
+      <button type="submit" class="cadastrar-button" [disabled]="raqueteForm.invalid" style="font-size: initial;">
+        {{ modoEdicao ? 'Salvar' : 'Cadastrar' }} Raquete
+      </button>
     </div>
   </form>
 </div>

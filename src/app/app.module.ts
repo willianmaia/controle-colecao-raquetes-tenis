@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { RaqueteService } from './raquete.service';
 import { CommonModule } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { FooterComponent} from './components/footer/footer.component';
@@ -36,7 +37,8 @@ import { ContagemRaquetesComponent } from './components/contagem-raquetes/contag
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [RaqueteService],
   bootstrap: [AppComponent]
