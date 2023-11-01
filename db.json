@@ -1,0 +1,18 @@
+{
+  "raquetes": [
+    {
+      "nomeMarca": "Wilson",
+      "valor": "100,00",
+      "link": "https://www.uol.com.br",
+      "descricao": "Raquete chic",
+      "id": "35c66cc5-67de-40a7-85cd-83f0bd30246c"
+    },
+    {
+      "nomeMarca": "Babolat",
+      "valor": "10",
+      "link": "https://www.uol.com.br",
+      "descricao": "Raquete chic",
+      "id": "44159384-0f82-4c88-8506-6dde9dcfd72f"
+    }
+  ]
+}

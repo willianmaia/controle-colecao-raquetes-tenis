@@ -14,14 +14,15 @@ export class ColecaoComponent implements OnInit {
 
   constructor(private raqueteService: RaqueteService) {}
 
-  ngOnInit() {
-    this.raquetes = this.raqueteService.obterRaquetes();
-    this.quantidadeDeRaquetes = this.raquetes.length;
-    console.log('Raquetes obtidas do serviço:', this.raquetes);
-    console.log('Quantidade de raquetes:', this.quantidadeDeRaquetes);
-    this.quantidadeDeRaquetesChange.emit(this.quantidadeDeRaquetes);
-
+  async ngOnInit() {
+    try {
+      this.raquetes = await this.raqueteService.obterRaquetes();
+      this.quantidadeDeRaquetes = this.raquetes.length;
+      console.log('Raquetes obtidas do serviço:', this.raquetes);
+      console.log('Quantidade de raquetes:', this.quantidadeDeRaquetes);
+      this.quantidadeDeRaquetesChange.emit(this.quantidadeDeRaquetes);
+    } catch (error) {
+      console.error('Erro ao obter raquetes', error);
+    }
   }
-
 }
-

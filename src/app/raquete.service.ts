@@ -1,53 +1,56 @@
 import { Injectable } from '@angular/core';
-import { Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 import { v4 as uuidv4 } from 'uuid';
+import { Observable } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class RaqueteService {
+  private apiUrl = 'http://localhost:3000/raquetes';
   private raquetes: any[] = [];
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.obterRaquetesArmazenadas();
   }
 
-  salvarRaquete(raquete: any) {
+  async salvarRaquete(raquete: any): Promise<any> {
     raquete.id = uuidv4();
     this.raquetes.push(raquete);
-    this.atualizarRaquetesArmazenadas();
+    await lastValueFrom(this.http.post(this.apiUrl, raquete));
+    const response = await this.obterRaquetes();
+    return response;
   }
 
-  obterRaquetes() {
+  async obterRaquetes(): Promise<any[]> {
+    const response = await lastValueFrom(this.http.get<any[]>(this.apiUrl));
+    if (response) {
+      this.raquetes = response;
+    }
     return this.raquetes;
   }
 
-  obterRaquetePorId(id: string): any {
-    return this.raquetes.find((raquete) => raquete.id === id);
+  async obterRaquetePorId(id: string): Promise<any> {
+    return lastValueFrom(this.http.get<any>(`${this.apiUrl}/${id}`));
   }
 
-  salvarRaqueteEditada(raqueteEditada: any) {
-    // Encontre a raquete existente com base no ID
-    const index = this.raquetes.findIndex((raquete) => raquete.id === raqueteEditada.id);
-
-    if (index !== -1) {
-      this.raquetes[index] = raqueteEditada;
-      this.atualizarRaquetesArmazenadas();
-    }
+  async salvarRaqueteEditada(raqueteEditada: any): Promise<any> {
+    await lastValueFrom(this.http.put(`${this.apiUrl}/${raqueteEditada.id}`, raqueteEditada));
+    const response = await this.obterRaquetes();
+    return response;
   }
 
-  excluirRaquete(id: string) {
-    // Encontre a raquete a ser excluída com base no ID e remova-a do array.
-    const index = this.raquetes.findIndex((raquete) => raquete.id === id);
-    if (index !== -1) {
-      this.raquetes.splice(index, 1);
-      this.atualizarRaquetesArmazenadas();
-
-    }
+  async excluirRaquete(id: string): Promise<any> {
+    await lastValueFrom(this.http.delete(`${this.apiUrl}/${id}`));
+    const response = await this.obterRaquetes();
+    return response;
   }
 
-  private atualizarRaquetesArmazenadas() {
-    localStorage.setItem('raquetes', JSON.stringify(this.raquetes));
+  async reiniciarColecao(): Promise<any> {
+    await lastValueFrom(this.http.delete(this.apiUrl));
+    this.raquetes = [];
+    return this.raquetes;
   }
 
   private obterRaquetesArmazenadas() {
@@ -55,11 +58,5 @@ export class RaqueteService {
     if (raquetesArmazenadas) {
       this.raquetes = JSON.parse(raquetesArmazenadas);
     }
-  }
-
-  // Método para zerar a matriz de raquetes armazenadas
-  reiniciarColecao() {
-    this.raquetes = [];
-    this.atualizarRaquetesArmazenadas();
   }
 }

@@ -21,19 +21,27 @@ export class CadastrarComponent {
     });
   }
 
-  executarAcao() {
+  async executarAcao() {
     if (this.raqueteForm.valid) {
       if (this.modoEdicao) {
         // Lógica para salvar a edição da raquete
-        this.raqueteService.salvarRaqueteEditada(this.raqueteForm.value);
+        try {
+          const response = await this.raqueteService.salvarRaqueteEditada(this.raqueteForm.value);
+          console.log('Raquete editada:', response);
+          this.router.navigate(['/colecao']);
+        } catch (error) {
+          console.error('Erro ao editar raquete', error);
+        }
       } else {
         // Lógica para cadastrar uma nova raquete
-        this.raqueteService.salvarRaquete(this.raqueteForm.value);
+        try {
+          const response = await this.raqueteService.salvarRaquete(this.raqueteForm.value);
+          console.log('Nova raquete cadastrada:', response);
+          this.router.navigate(['/colecao']);
+        } catch (error) {
+          console.error('Erro ao cadastrar nova raquete', error);
+        }
       }
-
-      console.log(this.modoEdicao ? 'Raquete editada:' : 'Nova raquete cadastrada:', this.raqueteForm.value);
-      // Após a ação, redirecione o usuário para a página de coleção
-      this.router.navigate(['/colecao']);
     }
   }
 
