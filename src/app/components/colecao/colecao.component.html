@@ -8,7 +8,7 @@
     <a [routerLink]="['/detalhes', raquete.id]">
       <img src="assets/resources/images/raquete-de-tenis.png" alt="Imagem Padrão da Raquete">
     </a>
-    <p>{{ raquete.nomeMarca }}</p>
+    <p>{{ raquete.nomeMarca | uppercase}}</p>
   </div>
 </div>
 
