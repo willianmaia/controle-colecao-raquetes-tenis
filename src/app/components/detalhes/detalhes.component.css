@@ -1,0 +1,35 @@
+.alert-success {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #007bff;
+    border-radius: 5px
+}
+
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .detalhes-container {
+    padding: 20px; /* Espaçamento interno */
+    text-align: center; /* Centralizar o texto */
+    max-width: 500px; /* Largura máxima para limitar o tamanho do container */
+  }
+  
+  .raquete-image {
+    max-width: 80%; /* Reduz a largura máxima da imagem para que ela se ajuste ao container */
+  }
+
+  .button-margin {
+    margin-right: 20px; /* Adiciona espaço entre os botões */
+    margin-left: 20px;
+    display: inline-block;
+    text-align: center;
+}
