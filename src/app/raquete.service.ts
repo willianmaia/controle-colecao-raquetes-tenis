@@ -10,6 +10,9 @@ import { lastValueFrom } from 'rxjs';
 export class RaqueteService {
   private apiUrl = 'http://localhost:3000/raquetes';
   private raquetes: any[] = [];
+  nomeRaquete: string = '';
+  totalRaquetesEncontradas: number = 0;
+  raquetesEncontradas: any[] = [];
 
   constructor(private http: HttpClient) {
     this.obterRaquetesArmazenadas();
@@ -59,4 +62,21 @@ export class RaqueteService {
       this.raquetes = JSON.parse(raquetesArmazenadas);
     }
   }
+
+  async pesquisarRaquetesPorNome(nomeRaquete: string): Promise<any[]> {
+    try {
+      console.log('Pesquisando raquetes com nome:', nomeRaquete);
+      const response = await lastValueFrom(this.http.get<any[]>(`${this.apiUrl}?nome=${nomeRaquete}`));
+      console.log('Resultado da pesquisa:', response);
+  
+      return response;
+    } catch (error) {
+      console.error('Erro ao pesquisar raquetes por nome', error);
+      return [];
+    }
+  }
+  
+
+
+  
 }

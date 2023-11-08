@@ -10,7 +10,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class CadastrarComponent {
   raqueteForm: FormGroup;
-  modoEdicao: boolean = false;
 
   constructor(private router: Router, private raqueteService: RaqueteService, private fb: FormBuilder) {
     this.raqueteForm = this.fb.group({
@@ -23,16 +22,6 @@ export class CadastrarComponent {
 
   async executarAcao() {
     if (this.raqueteForm.valid) {
-      if (this.modoEdicao) {
-        // Lógica para salvar a edição da raquete
-        try {
-          const response = await this.raqueteService.salvarRaqueteEditada(this.raqueteForm.value);
-          console.log('Raquete editada:', response);
-          this.router.navigate(['/colecao']);
-        } catch (error) {
-          console.error('Erro ao editar raquete', error);
-        }
-      } else {
         // Lógica para cadastrar uma nova raquete
         try {
           const response = await this.raqueteService.salvarRaquete(this.raqueteForm.value);
@@ -45,4 +34,3 @@ export class CadastrarComponent {
     }
   }
 
-}

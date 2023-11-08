@@ -4,8 +4,9 @@
     align-items: center;
     justify-content: center;
   }
-   
-  .pesquisar-div {
+
+
+  .raquete-input {
     background-color: #D9D9D9;
     color: black;
     border: none;
@@ -16,8 +17,13 @@
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    width: 90%;
+    width: 10%;
     height: 10%;
     cursor: default;
   }
+
+  .texto {
+    color: rgb(141, 135, 135); /* Substitua 'seucor' pela cor desejada para o placeholder */
+  }
+  
   

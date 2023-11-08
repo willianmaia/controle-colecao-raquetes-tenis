@@ -1,6 +1,6 @@
 <div class="cadastrar-container">
   <div class="cadastrar-div">
-    {{ modoEdicao ? 'EDITAR' : 'CADASTRAR' }}
+    CADASTRAR
   </div>
   
   <form [formGroup]="raqueteForm" class="cadastrarform-div" (ngSubmit)="executarAcao()">
@@ -42,7 +42,7 @@
 
     <div class="form-row">
       <button type="submit" class="cadastrar-button" [disabled]="raqueteForm.invalid" style="font-size: initial;">
-        {{ modoEdicao ? 'Salvar' : 'Cadastrar' }} Raquete
+        Cadastrar Raquete
       </button>
     </div>
   </form>

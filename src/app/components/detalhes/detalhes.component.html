@@ -2,11 +2,10 @@
   <div class="detalhes-container">
     <div *ngIf="raquete">
       <img src="assets/resources/images/raquete-de-tenis.png" alt="Imagem da Raquete" class="raquete-image" />
-      <h1>{{ raquete.nomeMarca }}</h1>
+      <h1>{{ raquete.nomeMarca | uppercase }}</h1>
       <p>Valor: R$ {{ raquete.valor }}</p>
       <p>Link: <a [href]="raquete.link">{{ raquete.link }}</a></p>
       <p>Descrição: {{ raquete.descricao }}</p>
-      <button (click)="editarRaquete()" class="button-margin">Editar</button>
       <button (click)="excluirRaquete()" class="button-margin">Excluir</button>
     </div>    
   </div>

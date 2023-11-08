@@ -22,29 +22,29 @@
 }
 
 label {
-  font-weight: bold; /* Negrito */
-  color: black; /* Cor preta */
+  font-weight: bold; 
+  color: black; 
 }
 
 input, textarea {
-  color: black; /* Cor preta */
+  color: black; 
   width: 100%;
   max-width: 100%;
   word-wrap: break-word;
-  resize: vertical; /* Permite redimensionar verticalmente o campo */
-  max-height: 300px; /* Define uma altura máxima */
+  resize: vertical; 
+  max-height: 300px; 
   min-width: 300px;
 }
 
 .cadastrar-button {
   margin-top: 40px; 
-  text-align: center; /* Centraliza o botão horizontalmente */
+  text-align: center;
 }
 
 .cadastrarimagem-input {
   display: flex;
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  flex-direction: column; /* Alinha elementos verticalmente */
-  text-align: center; /* Centraliza o texto dentro do botão */
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
+  text-align: center; 
 }

@@ -24,16 +24,6 @@ export class DetalhesComponent implements OnInit {
     }
   }
 
-  async editarRaquete() {
-    try {
-      const response = await this.raqueteService.salvarRaqueteEditada(this.raquete);
-      console.log('Raquete editada:', response);
-      this.router.navigate(['/colecao']);
-    } catch (error) {
-      console.error('Erro ao editar a raquete', error);
-    }
-  }
-
   async ngOnInit() {
     const id = this.route.snapshot.params['id'];
     try {

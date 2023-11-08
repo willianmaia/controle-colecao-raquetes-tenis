@@ -1,3 +1,6 @@
 <div class="pesquisar-container">
-    <div class="pesquisar-div">PESQUISAR</div>
-  </div>
+  <p class="texto" >Digite o Nome / Marca da Raquete: </p>
+  <input type="text" [(ngModel)]="nomeRaquete" class="raquete-input" />
+  <button (click)="pesquisarRaquetesPorNome()" class="pesquisar-button">Pesquisar</button>
+  <p>Total de raquetes encontradas: {{ totalRaquetesEncontradas }}</p>
+</div>
