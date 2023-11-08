@@ -2,7 +2,7 @@
 Projeto para Controle de uma Coleção de Raquetes de Tenis
 
 ## Endereço de Deploy - GitHub Pages
-https://github.com/willianmaia/
+https://willianmaia.github.io/controle-colecao-raquetes-tenis/
 
 ## Protótipo
 https://www.figma.com/file/4mUilCna6Mlhb7Ck0yFtAH/Untitled?type=design&node-id=0%3A1&mode=design&t=Db6zbeeezt0AvSKs-1
