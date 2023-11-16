@@ -1,0 +1,32 @@
+{
+  "raquetes": [
+    {
+      "nomeMarca": "Wilson",
+      "valor": "100,00",
+      "link": "https://www.uol.com.br",
+      "descricao": "Raquete chic",
+      "id": "35c66cc5-67de-40a7-85cd-83f0bd30246c"
+    },
+    {
+      "nomeMarca": "Babolat",
+      "valor": "100,00",
+      "link": "https://www.uol.com.br",
+      "descricao": "Raquete chic",
+      "id": "c623bdaf-057f-4b52-8e4d-399b34fe8104"
+    },
+    {
+      "nomeMarca": "Head",
+      "valor": "500,00",
+      "link": "https://www.prospin.com.br",
+      "descricao": "Raquete top",
+      "id": "0543ce13-f7dd-454b-ae31-2259bae256b4"
+    },
+    {
+      "nomeMarca": "Wilson",
+      "valor": "100,00",
+      "link": "https://www.uol.com.br",
+      "descricao": "Raquete chic",
+      "id": "5fd13b47-6e1a-4274-aa65-e4ca54867c4c"
+    }
+  ]
+}

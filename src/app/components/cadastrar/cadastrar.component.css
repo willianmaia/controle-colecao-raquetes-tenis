@@ -1,0 +1,50 @@
+.cadastrar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; /* Centraliza o conteúdo horizontalmente */
+  height: auto; 
+}
+
+.cadastrar-div {
+  background-color: #D9D9D9;
+  color: black;
+  border: none;
+  padding: 20px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  width: 90%;
+  cursor: default;
+}
+
+label {
+  font-weight: bold; 
+  color: black; 
+}
+
+input, textarea {
+  color: black; 
+  width: 100%;
+  max-width: 100%;
+  word-wrap: break-word;
+  resize: vertical; 
+  max-height: 300px; 
+  min-width: 300px;
+}
+
+.cadastrar-button {
+  margin-top: 40px; 
+  text-align: center;
+}
+
+.cadastrarimagem-input {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  flex-direction: column; 
+  text-align: center; 
+}

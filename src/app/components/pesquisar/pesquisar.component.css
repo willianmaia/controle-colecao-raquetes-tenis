@@ -1,0 +1,29 @@
+.pesquisar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .raquete-input {
+    background-color: #D9D9D9;
+    color: black;
+    border: none;
+    padding: 20px;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    width: 10%;
+    height: 10%;
+    cursor: default;
+  }
+
+  .texto {
+    color: rgb(141, 135, 135); /* Substitua 'seucor' pela cor desejada para o placeholder */
+  }
+  
+  

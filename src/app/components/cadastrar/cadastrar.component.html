@@ -1,0 +1,49 @@
+<div class="cadastrar-container">
+  <div class="cadastrar-div">
+    CADASTRAR
+  </div>
+  
+  <form [formGroup]="raqueteForm" class="cadastrarform-div" (ngSubmit)="executarAcao()">
+    <div class="form-row">
+      <label for="nome-marca" style="font-size: initial;">Nome/Marca:</label>
+      <input type="text" id="nome-marca" name="nome-marca" class="cadastrar-input"
+        formControlName="nomeMarca" style="font-size: initial;">
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('maxlength')">Nome/Marca muito longo.</div>
+      <div *ngIf="raqueteForm?.get('nomeMarca')?.hasError('minlength')">Nome/Marca muito curto.</div>
+      <div *ngIf="raqueteForm.get('nomeMarca')?.hasError('pattern')">Nome/Marca deve conter apenas letras, números e espaços.</div>
+    </div>
+
+    <div class="form-row">
+      <label for="valor" style="font-size: initial;">Valor:</label>
+      <input type="text" id="valor" name="valor" class="cadastrar-input"
+        formControlName="valor" style="font-size: initial">
+      <div *ngIf="raqueteForm.get('valor')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm.get('valor')?.hasError('pattern')">Formato de dinheiro inválido. Use um formato válido, como 12345,67</div>
+    </div>
+    
+    <div class="form-row">
+      <label for="link" style="font-size: initial;">Link:</label>
+      <input type="text" id="link" name="link" class="cadastrar-input"
+        formControlName="link" style="font-size: initial">
+      <div *ngIf="raqueteForm.get('link')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm.get('link')?.hasError('maxlength')">Link muito longo.</div>
+      <div *ngIf="raqueteForm.get('link')?.hasError('pattern')">Link inválido. Use um formato válido.</div>
+    </div>
+    
+    <div class="form-row">
+      <label for="descricao" style="font-size: initial;">Descrição:</label>
+      <input type="text" id="descricao" name="descricao" class="cadastrar-input"
+        formControlName="descricao" style="font-size: initial;">
+      <div *ngIf="raqueteForm?.get('descricao')?.hasError('required')"></div>
+      <div *ngIf="raqueteForm?.get('descricao')?.hasError('maxlength')">Descrição muito longa.</div>
+      <div *ngIf="raqueteForm.get('descricao')?.hasError('pattern')">A descrição deve conter apenas letras, números e os caracteres @!#$%^&*()_+.,;?</div>
+    </div>
+
+    <div class="form-row">
+      <button type="submit" class="cadastrar-button" [disabled]="raqueteForm.invalid" style="font-size: initial;">
+        Cadastrar Raquete
+      </button>
+    </div>
+  </form>
+</div>
