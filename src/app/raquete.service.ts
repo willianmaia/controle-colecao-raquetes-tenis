@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { v4 as uuidv4 } from 'uuid';
 import { Observable } from 'rxjs';
 import { lastValueFrom } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -13,6 +14,7 @@ export class RaqueteService {
   nomeRaquete: string = '';
   totalRaquetesEncontradas: number = 0;
   raquetesEncontradas: any[] = [];
+  private raqueteDetalhes: any | null = null;
 
   constructor(private http: HttpClient) {
     this.obterRaquetesArmazenadas();
@@ -44,8 +46,14 @@ export class RaqueteService {
     return response;
   }
 
-  async excluirRaquete(id: string): Promise<any> {
-    await lastValueFrom(this.http.delete(`${this.apiUrl}/${id}`));
+  excluirRaquete(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`).pipe(
+      switchMap(() => this.obterRaquetes())
+    );
+  }
+
+  async editarRaquete(id: string, raqueteEditada: any): Promise<any> {
+    await lastValueFrom(this.http.put(`${this.apiUrl}/${id}`, raqueteEditada));
     const response = await this.obterRaquetes();
     return response;
   }
@@ -75,8 +83,25 @@ export class RaqueteService {
       return [];
     }
   }
-  
 
+  setRaqueteDetalhes(detalhes: any) {
+    this.raqueteDetalhes = detalhes;
+    localStorage.setItem('raqueteDetalhes', JSON.stringify(detalhes));
+  }
 
+  getRaqueteDetalhes(): any | null {
+    if (!this.raqueteDetalhes) {
+      const storedDetalhes = localStorage.getItem('raqueteDetalhes');
+      if (storedDetalhes) {
+        this.raqueteDetalhes = JSON.parse(storedDetalhes);
+      }
+    }
+    return this.raqueteDetalhes;
+  }
+
+  clearRaqueteDetalhes() {
+    this.raqueteDetalhes = null;
+    localStorage.removeItem('raqueteDetalhes');
+  }
   
 }

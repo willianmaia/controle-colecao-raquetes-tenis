@@ -7,6 +7,7 @@
       <p>Link: <a [href]="raquete.link">{{ raquete.link }}</a></p>
       <p>Descrição: {{ raquete.descricao }}</p>
       <button (click)="excluirRaquete()" class="button-margin">Excluir</button>
+      <button (click)="editarRaquete()" class="button-margin">Editar</button>
     </div>    
   </div>
   <div id="raqueteExcluidaAlert" class="alert-success" *ngIf="exibindoAlertaExclusao">
